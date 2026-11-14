@@ -12,6 +12,8 @@
 | Versión de Android | 16 |
 | RAM total reportada | 7,85 GB |
 | RAM disponible observada | Entre 2,5 y 3 GB |
+| RAM virtual / ZRAM reportada | 8,59 GB |
+| Uso reportado de RAM virtual / ZRAM | 2,92 GB |
 | Almacenamiento libre | 190 GB |
 | Procesador / SoC | MediaTek Dimensity 7025 Ultra |
 | Núcleos del procesador | Cortex-A55 y Cortex-A78 |
