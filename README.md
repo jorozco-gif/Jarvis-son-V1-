@@ -120,6 +120,9 @@ El registro completo de limitaciones y fallos, incluidos los cierres por memoria
 
 Antes de cada commit, confirma que no incluye pesos (`.gguf`, `.bin`, `.onnx`), audio (`.wav`), tokens ni datos del teléfono.
 
+Las tareas de cada etapa están en las issues [#1](https://github.com/jorozco-gif/Jarvis-son-V1-/issues/1) a [#8](https://github.com/jorozco-gif/Jarvis-son-V1-/issues/8).
+El avance de todas las tareas se sigue en el tablero [Jarvis-son V1](https://github.com/users/santiagoarias-beep/projects/1), con las columnas Pendiente, Listo, En curso, Revisión y Hecho.
+
 ## Equipo
 
 | Rol | Responsabilidad |
