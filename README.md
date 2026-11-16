@@ -124,7 +124,7 @@ Antes de cada commit, confirma que no incluye pesos (`.gguf`, `.bin`, `.onnx`), 
 
 | Rol | Responsabilidad |
 |---|---|
-| Estudiante 1 · Ingeniería y Código | Teléfono, programación, integración técnica y ejecución de todas las pruebas |
+| Estudiante 1 · Ingeniería y Código (Juan Sebastián Orozco Rios) | Teléfono, programación, integración técnica y ejecución de todas las pruebas |
 | Estudiante 2 · Gestión y Evaluación (Santiago Ospina Arias) | Repositorio, métricas, documentación de las grabaciones de prueba y manifiesto. No programa ni usa el aplicativo. |
 
-Las guías de trabajo están en [`docs/guia-estudiante-2.md`](docs/guia-estudiante-2.md) y [`docs/retroalimentacion-estudiante-1.md`](docs/retroalimentacion-estudiante-1.md).
+
