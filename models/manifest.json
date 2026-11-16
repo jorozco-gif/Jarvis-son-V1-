@@ -1,0 +1,118 @@
+{
+  "version_manifiesto": 1,
+  "proyecto": "Jarvis-son V1",
+  "rutas_relativas_a": "raiz del repositorio",
+  "modelos": [
+    {
+      "id": "whisper-tiny",
+      "funcion": "voz_a_texto",
+      "motor": "whisper.cpp",
+      "revision_fuente_motor": "5922450fbce1ed9d1648babd0d5ac4520055b436",
+      "repositorio_motor": "https://github.com/ggml-org/whisper.cpp",
+      "ejecutable": "../whisper.cpp/build/bin/whisper-cli",
+      "archivo": "../jarvis-modelos/ggml-tiny.bin",
+      "sha256": "be07e048e1e599ad46341c8d2a135645097a538221678b7acdd1b1919c6e1b21",
+      "url_descarga": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-tiny.bin",
+      "verificacion": {
+        "resultado": "coincide_con_sha256_publicado",
+        "fuente": "https://huggingface.co/ggerganov/whisper.cpp/blob/main/ggml-tiny.bin"
+      },
+      "configuracion": {
+        "variante": "tiny multilingue",
+        "idioma": "es",
+        "entrada": "WAV PCM s16le mono 16000 Hz",
+        "opciones": ["-l", "es", "-nt", "-np"]
+      },
+      "licencia": null,
+      "estado_licencia": "pendiente_de_verificacion"
+    },
+    {
+      "id": "qwen-0.8b-q4_0",
+      "funcion": "generacion_de_texto",
+      "motor": "llama.cpp",
+      "revision_fuente_motor": "e574a17b062be51b98e239ccd3d3743e3d902333",
+      "repositorio_motor": "https://github.com/ggml-org/llama.cpp",
+      "ejecutable": "../llama.cpp/build/bin/llama-cli",
+      "archivo": "../jarvis-modelos/Qwen3.5-0.8B-Q4_0.gguf",
+      "sha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+      "url_descarga": "https://huggingface.co/ggml-org/Qwen3.5-0.8B-GGUF/resolve/main/Qwen3.5-0.8B-Q4_0.gguf",
+      "verificacion": {
+        "resultado": "coincide_con_sha256_publicado",
+        "fuente": "https://huggingface.co/ggml-org/Qwen3.5-0.8B-GGUF/blob/main/Qwen3.5-0.8B-Q4_0.gguf"
+      },
+      "configuracion": {
+        "cuantizacion": "Q4_0",
+        "contexto_tokens": 1024,
+        "salida_maxima_tokens": 96,
+        "enable_thinking": false,
+        "reasoning_budget": 0,
+        "single_turn": true,
+        "simple_io": true,
+        "no_display_prompt": true,
+        "jinja": true
+      },
+      "licencia": null,
+      "estado_licencia": "pendiente_de_verificacion"
+    },
+    {
+      "id": "piper-es_MX-claude-high",
+      "funcion": "texto_a_voz",
+      "motor": "sherpa-onnx",
+      "revision_fuente_motor": "1a9d234ab95567eba8c2e89873a87d70b79633e2",
+      "repositorio_motor": "https://github.com/k2-fsa/sherpa-onnx",
+      "ejecutable": "../sherpa-onnx/build-piper/bin/sherpa-onnx-offline-tts",
+      "directorio": "../jarvis-modelos/vits-piper-es_MX-claude-high",
+      "url_paquete": "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-es_MX-claude-high.tar.bz2",
+      "fuente_descarga": "https://k2-fsa.github.io/sherpa/onnx/tts/all/Spanish/vits-piper-es_MX-claude-high.html",
+      "archivos": [
+        {
+          "nombre": "es_MX-claude-high.onnx",
+          "sha256": "6b7a54f5fcc8c9ce3788cd308a26cfa429ad025cdff4a7a6c34d025d0d229341"
+        },
+        {
+          "nombre": "es_MX-claude-high.onnx.json",
+          "sha256": "1afc81f703c0e4cb3b4d7c0dca096b8b54a98806807f0170cf5eb5557723c12d"
+        },
+        {
+          "nombre": "tokens.txt",
+          "sha256": "ef3a7e4a8d1af0c9d4dc45aaae1a6242ebe24a7ed6f3d025a49eb29682784c6d"
+        }
+      ],
+      "verificacion": {
+        "archivos": "huellas_coinciden_con_copia_del_paquete_descargado",
+        "directorio_pronunciacion": "espeak-ng-data",
+        "comparacion_directorio": "diff -qr sin diferencias reportadas",
+        "referencia": "paquete descargado por HTTPS desde la publicacion de sherpa-onnx",
+        "sha256_publicados_independientemente": false
+      },
+      "configuracion": {
+        "idioma": "es_MX",
+        "hablantes": 1,
+        "frecuencia_salida_hz": 22050,
+        "hilos": 1,
+        "formato_opciones": "--nombre=valor"
+      },
+      "licencia": null,
+      "estado_licencia": "pendiente_de_verificacion_del_modelo_y_dependencias"
+    }
+  ],
+  "documentacion": {
+    "configuracion_ejecutable": "include/config.hpp",
+    "evaluacion": "docs/evaluacion-integracion.md",
+    "metricas": "docs/mediciones/tiempos-integracion.csv"
+  },
+  "validacion_integracion": {
+    "turnos_sin_internet": 10,
+    "turnos_completados_sin_error_de_ejecucion": 10,
+    "turnos_con_correccion_manual_stt": 9,
+    "calidad_stt": "pendiente_de_mejora",
+    "calidad_slm": "respuestas_incorrectas_documentadas"
+  },
+  "limitaciones": [
+    "Las revisiones identifican el codigo fuente local, no certifican los binarios compilados.",
+    "Las URL con main y los paquetes de publicacion pueden cambiar; las huellas identifican los archivos verificados.",
+    "La comprobacion de integridad no verifica licencias ni calidad del modelo.",
+    "Los pesos, datos de pronunciacion y audios no se incluyen en Git.",
+    "Este manifiesto no declara cumplimiento total de la guia."
+  ]
+}
